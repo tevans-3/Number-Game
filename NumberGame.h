@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define width 300
-#define height 600 
+#define width 30
+#define height 70
 
 struct Game {
     char** board; 

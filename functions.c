@@ -16,8 +16,11 @@ Game initialize(){
 void show_borders(Game* game){
     for (int i = 0; i < height; i++){
         for (int j = 0; j < width; j++){
-            if (i == 0 || i == height-1 || j == 0 || j == width-1){
-                game->board[i][j] = "#"; 
+            if (i == 0 || i == height-1){
+                game->board[i][j] = '-'; 
+            }
+            else if (j == 0 || j == width-1){
+                game->board[i][j] = '|';
             }
         }
     }
@@ -25,39 +28,33 @@ void show_borders(Game* game){
 
 void show_title(Game* game){
     for (int i = 0; i < height; i++){
-        for (int j = 0; j < width; j++){
-            if (i == 19){
-                game->board[i] =     "     ####################     ";
-                game->board[i+1] =   "     #   NUMBER GAME    #     ";
-                game->board[i+2] =   "     ####################     ";
-            }
+            if (i == 9){
+                game->board[i] =     "|    ####################    |";
+                game->board[i+1] =   "|    #   NUMBER GAME    #    |";
+                game->board[i+2] =   "|    ####################    |";
         }                                
     }
 }
 
 void show_desc(Game* game){
     for (int i = 0; i < height; i++){
-        for (int j = 0; j < width; j++){
-            if (i == 25){
-                game->board[i] =     "     ####################     ";
-                game->board[i+1] =   "     #        A         #     ";
-                game->board[i+2] =   "     #      PATTERN     #     ";
-                game->board[i+3] =   "     #    RECOGNITION   #     ";
-                game->board[i+4] =   "     #       GAME       #     ";
-                game->board[i+5] =   "     ####################     ";
-            }
+            if (i == 15){
+                game->board[i] =     "|    ####################    |";
+                game->board[i+1] =   "|    #        A         #    |";
+                game->board[i+2] =   "|    #      PATTERN     #    |";
+                game->board[i+3] =   "|    #    RECOGNITION   #    |";
+                game->board[i+4] =   "|    #       GAME       #    |";
+                game->board[i+5] =   "|    ####################    |";
         }                                
     }
 }
 
 void show_license(Game* game){
     for (int i = 0; i < height; i++){
-        for (int j = 0; j < width; j++){
-            if (i == 50){
-                game->board[i] =     "     ####################     ";
-                game->board[i+1] =   "     #    MIT LICENSE   #     ";
-                game->board[i+2] =   "     ####################     ";
-            }                                
+            if (i == 30){
+                game->board[i] =     "|    ####################    |";
+                game->board[i+1] =   "|    #    MIT LICENSE   #    |";
+                game->board[i+2] =   "|    ####################    |";                             
         }
     }
 }
@@ -68,6 +65,24 @@ void welcome_message(Game* game){
     show_desc(game);
     show_license(game);
 }
+
+void clear_display(Game* game){
+    for (int i = 0; i < height; i++){
+        for (int j = 0; j < width; j++){
+            game->board[i][j] = ' '; 
+        }
+    }
+}
+
+void print_board(Game* game){
+    for (int i = 0; i < height; i++){
+        for (int j = 0; j < width; j++){
+            printf("%c ", game->board[i][j]); 
+        }
+        printf("%s", "\n"); 
+    }
+}
+
 void show_instructions_lvl0(Game* game){ 
     //
     //Level 0 is the start of the game. 

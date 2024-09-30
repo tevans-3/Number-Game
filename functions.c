@@ -177,7 +177,7 @@ void show_instructions_lvl4(Game* game){
                 game->board[i] =     "###############################";
                 game->board[i+1] =   "#         INSTRUCTIONS:       #";
                 game->board[i+2] =   "#          SAME THING         #";
-                game->board[i+3] =   "#        BUT EVEN FASTER.    #";
+                game->board[i+3] =   "#        BUT EVEN FASTER.     #";
                 game->board[i+5] =   "###############################";
             }
             if (i == 60){

@@ -1,2 +1,2 @@
 # Number-Game
-Pattern matching game playable in the terminal.
+Pattern recognition game playable in the terminal.

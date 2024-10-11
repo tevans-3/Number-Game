@@ -76,6 +76,7 @@ void clear_display(Game* game){
 
 void print_board(Game* game){
     for (int i = 0; i < height; i++){
+        printf("                                                                      ");
         for (int j = 0; j < width; j++){
             printf("%c ", game->board[i][j]); 
         }
@@ -241,6 +242,26 @@ void clear_display(Game* game){
 char* generate_new_state();
 void move_state(void);
 char* get_guess(void);
+
+char* generate_new_sequence(){
+    char* new_memb[2];
+    int mod_by = 1; 
+    if (level == 1){mod_by = 3;}
+    else if (level == 2){mod_by = 5;}
+    else if (level == 3){mod_by = 10;}
+    else if (level == 4){mod_by = 15;}
+    else if (level == 5){mod_by = 20;}
+    int new_seq_int_vals[mod_by]; int ran; 
+    for (int i = 0; i < mod_by; i++){  
+        ran = rand()% mod_by; 
+        new_seq_int_vals[i] = ran;
+    }
+    //traverse tree of stored tactics. pick a tactic not picked within the last 5 sequences. 
+    //level 1
+    new_memb[1] = itoa() 
+}
+
+
 
 void free(Game* game){
     for (int i = 0; i < height; i++){

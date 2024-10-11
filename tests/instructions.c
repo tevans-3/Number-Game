@@ -74,6 +74,7 @@ void clear_display(Game* game){
 
 void print_board(Game* game){
     for (int i = 0; i < height; i++){
+        printf("                                                                      ");
         for (int j = 0; j < width; j++){
             printf("%c ", game->board[i][j]); 
         }
@@ -230,7 +231,7 @@ void show_instructions_bonuslvl(Game* game){
 
 int main(){
     Game new_game = initialize();  
-    print_board(&new_game); 
+    //print_board(&new_game); 
 
     show_instructions_lvl0(&new_game); 
     print_board(&new_game); 
